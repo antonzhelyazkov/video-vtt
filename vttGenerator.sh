@@ -1,5 +1,7 @@
 #!/bin/sh
-
+###############################
+# by Anton Antonov 09.04.2019 #
+###############################
 OPTS=$(getopt -o f:d: --long file:,directory: -n 'parse-options' -- "$@")
 getOptsExitCode=$?
 if [ $getOptsExitCode != 0 ]; then
@@ -33,6 +35,8 @@ timeInterval=2
 
 spritePositionH=0
 spritePositionW=0
+
+####################################
 
 hash $ffmpegBin 2>/dev/null || { echo >&2 "I require FFMPEG but it's not installed. compile ffmpeg in /root. Aborting."; exit 1; }
 hash $ffprobeBin 2>/dev/null || { echo >&2 "I require FFMPEG but it's not installed. compile ffmpeg in /root. Aborting."; exit 1; }
