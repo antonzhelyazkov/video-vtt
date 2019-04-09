@@ -101,9 +101,9 @@ for ((k=1;k<=$(($jpgFiles+1));k++)) do
                         spritePositionW=$(($j*$sizeWide))
                         if [[ $fileDuration -gt $(($timeInterval*$(($counter)))) ]]; then
                                 startTime=$(($timeInterval*$(($counter-1))))
-                                startTimeE=$(date -d@$startTime -u +%M:%S.001)
+                                startTimeE=$(date -d@$startTime -u +%H:%M:%S.001)
                                 endTime=$(($timeInterval*$(($counter))))
-                                endTimeE=$(date -d@$endTime -u +%M:%S.000)
+                                endTimeE=$(date -d@$endTime -u +%H:%M:%S.000)
                                 if [[ $k -lt 10 ]]; then
                                         echo -e "$startTimeE --> $endTimeE\n/$inputFileName-00$k.jpg#xywh=$spritePositionW,$spritePositionH,$sizeWide,$sizeHigh\n" >> $vttFile
                                 elif [[ $k -ge 10 ]] && [[ $k -lt 100 ]]; then
